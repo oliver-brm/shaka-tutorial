@@ -5,7 +5,7 @@ import org.scalajs.dom.*
 
 class TicTac extends WebComponent:
 
-  override val template = Frag {
+  override val template: Frag = Frag {
     import builders.*
 
     div{className("game")
@@ -19,7 +19,7 @@ class TicTac extends WebComponent:
     }
   }
 
-  override val shadowDom = ShadowDom.WithStyle(
+  override val shadowDom: ShadowDom.WithStyle = ShadowDom.WithStyle(
     """
       |
       |ol, ul {

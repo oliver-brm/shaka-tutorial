@@ -1,29 +1,27 @@
 package com.example.shakatutorial
 
 import org.getshaka.shaka.*
+import SquareValue.*
 
-class Board extends Component:
-  override val template = Frag {
+class Board extends Component :
+  override val template: Frag = Frag {
     import builders.*
 
-    val status = "Next player: X"
+    val nextPlayer = Frag {
+      GameState.bind(s => if s.xIsNext then t"X" else t"O")
+    }
 
-    div{
-      div{className("status"); status.t}
-      div{className("board-row")
-        Square().render
-        Square().render
-        Square().render
+    div {
+      div {
+        className("status")
+        t"Next player: $nextPlayer"
       }
-      div{className("board-row")
-        Square().render
-        Square().render
-        Square().render
-      }
-      div{className("board-row")
-        Square().render
-        Square().render
-        Square().render
-      }
+      for i <- 0 until 9 by 3 do
+        div {
+          className("board-row")
+          Square(i).render
+          Square(i + 1).render
+          Square(i + 2).render
+        }
     }
   }
