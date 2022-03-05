@@ -8,6 +8,9 @@ class TicTac extends WebComponent:
   override val template: Frag = Frag {
     import builders.*
 
+    h1{className("game-title")
+      t"Tic Tac Toe!"}
+
     div{className("game")
       div{className("game-board")
         Board().render
@@ -66,6 +69,11 @@ class TicTac extends WebComponent:
       |
       |.game-info {
       |  margin-left: 20px;
+      |}
+      |
+      |.game-title {
+      |   font-size: 24px;
+      |   font-family: Arial, Helvetica, sans-serif;
       |}
       |""".stripMargin
   )
