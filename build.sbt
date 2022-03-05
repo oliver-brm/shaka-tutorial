@@ -11,6 +11,6 @@ lazy val root = project
     scalaJSUseMainModuleInitializer := true,
 
     libraryDependencies ++= Seq(
-      "org.getshaka" %%% "shaka" % "0.4.0"
+      "org.getshaka" %%% "shaka" % "0.4.1"
     )
   )
